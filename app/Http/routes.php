@@ -13,7 +13,7 @@
 
 //Ensayando el logueo
 
-Route::resource('log','LogController');
+Route::resource('logi','LogController');
 Route::resource('store','UsersController');
 
 Route::get('/raimlog', [
