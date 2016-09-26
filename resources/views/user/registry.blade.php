@@ -5,7 +5,7 @@
     @include('messages.errors.errors')
 
     <div class="form-group">
-        {!! Form::open(['route' => 'store.store', 'method' => 'POST']) !!}
+        {!! Form::open(['route' => 'store', 'method' => 'POST']) !!}
 
         <div class="form-group">
 

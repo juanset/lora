@@ -8,7 +8,7 @@
 
 
     <div class="form-group">
-        {!! Form::open(['route' => 'log.store', 'method' => 'POST']) !!}
+        {!! Form::open(['route' => 'log', 'method' => 'POST']) !!}
             <div class="form-group" align="center">
 
                 {!! Form::text('username',null,['class' => 'form-control', 'placeholder' => 'Username', 'required']) !!}

@@ -13,9 +13,6 @@
 
 //Ensayando el logueo
 
-Route::resource('logi','LogController');
-Route::resource('store','UsersController');
-
 Route::get('/raimlog', [
     'uses' => 'LogController@login',
     'as'	=> 'raimlog'
@@ -30,6 +27,18 @@ Route::group(['middleware' => ['web']], function () {
     });
 
 });
+
+Route::resource('log','LogController');
+Route::get('/log', [
+    'uses' => 'LogController@login',
+    'as'	=> 'log'
+]);
+
+Route::resource('store','UsersController');
+Route::get('/store', [
+    'uses' => 'UsersController@store',
+    'as'	=> 'store'
+]);
 
 Route::get('/flogin', [
     'uses' => 'UsersController@flogin',
@@ -54,15 +63,19 @@ Route::get('destroy/{id}',
     ]);
 
 
-Route::group(['prefix' => 'admin'], function ()
+/*Route::group(['prefix' => 'admin'], function ()
 {
     Route::resource('users','UsersController');
 
-});
+});*/
 
 Route::group(['prefix' => 'admin'], function ()
 {
     Route::resource('scenes','Ar_ScenesController');
+    Route::get('/scenes', [
+        'uses' => 'Ar_ScenesController@index',
+        'as'	=> 'scenes'
+    ]);
 
     Route::get('scenes/{id}/visualize/{marker?}',
         [

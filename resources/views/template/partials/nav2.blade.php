@@ -181,7 +181,7 @@
                         </li>
                         @endif
                         <li>
-                            <a href="{{ route('admin.scenes.index')}}">
+                            <a href="{{ route('scenes')}}">
                                 OA's realidad aumentada
                             </a>
 

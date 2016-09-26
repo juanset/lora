@@ -9,7 +9,7 @@
     <meta name="description" content="RAIM">
     <meta name="author" content="GAIA - Universidad Nacional de Colombia Sede Manizales">
 
-    <title>@yield('title', 'LORA')</title>
+    <title>@yield('title', 'ARTools')</title>
 
 
 
