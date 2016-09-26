@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22b846d6-924b-4dff-93a9-0e121940aba8" name="Default" comment="Cambio en las rutas">
+    <list default="true" id="22b846d6-924b-4dff-93a9-0e121940aba8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lora.iws" />
@@ -326,7 +326,7 @@
       <workItem from="1469136912708" duration="19139000" />
       <workItem from="1474907450756" duration="1290000" />
       <workItem from="1474908774371" duration="298000" />
-      <workItem from="1474910998054" duration="192000" />
+      <workItem from="1474910998054" duration="198000" />
     </task>
     <task id="LOCAL-00001" summary="Cambio en las rutas">
       <created>1474908864192</created>
@@ -342,11 +342,18 @@
       <option name="project" value="LOCAL" />
       <updated>1474911090356</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cambio en las rutas">
+      <created>1474911192375</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1474911192375</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104443000" />
+    <option name="totallyTimeSpent" value="104449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
