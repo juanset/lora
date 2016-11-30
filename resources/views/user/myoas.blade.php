@@ -42,9 +42,9 @@
 
     </form>
 
-    <img src="http://localhost/lora/public/images/markers/11.png" id="image">
+    <img src="http://localhost/artools/public/images/markers/11.png" id="image">
 
-    <a href="http://localhost/lora/public/images/markers" download="11.png" id="download">Descargar Marcador</a>
+    <a href="http://localhost/artools/public/images/markers" download="11.png" id="download">Descargar Marcador</a>
 
     {!! $scenes->render() !!}
 @endsection
@@ -62,22 +62,22 @@
         {
             if (document.form.sel.value == "11")
             {
-                document.getElementById("image").src = "http://localhost/lora/public/images/markers/11.png";
+                document.getElementById("image").src = "http://localhost/artools/public/images/markers/11.png";
                 document.getElementById("download").download="11.png";
             }
             if (document.form.sel.value == "12")
             {
-                document.getElementById("image").src =  "http://localhost/lora/public/images/markers/12.png";
+                document.getElementById("image").src =  "http://localhost/artools/public/images/markers/12.png";
                 document.getElementById("download").download="12.png";
             }
             if (document.form.sel.value == "13")
             {
-                document.getElementById("image").src = "http://localhost/lora/public/images/markers/13.png";
+                document.getElementById("image").src = "http://localhost/artools/public/images/markers/13.png";
                 document.getElementById("download").download="13.png";
             }
             if (document.form.sel.value == "14")
             {
-                document.getElementById("image").src =  "http://localhost/lora/public/images/markers/14.png";
+                document.getElementById("image").src =  "http://localhost/artools/public/images/markers/14.png";
                 document.getElementById("download").download="14.png";
             }
         }
