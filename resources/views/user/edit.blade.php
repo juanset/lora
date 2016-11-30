@@ -120,9 +120,9 @@
 
     </form>
 
-    <img src="http://localhost/artools/public/images/markers/11.png" id="image">
+    <img src="http://froac.manizales.unal.edu.co/artools/public/images/markers/11.png" id="image">
 
-    <a href="http://localhost/artools/public/images/markers/" download="11.png" id="download">Descargar Marcador</a>
+    <a href="http://froac.manizales.unal.edu.co/artools/public/images/markers/" download="11.png" id="download">Descargar Marcador</a>
 
 
 @endsection
@@ -177,7 +177,7 @@
                 return 0;
             }
 
-            document.form.action="http://localhost/artools/public/resave";
+            document.form.action="http://froac.manizales.unal.edu.co/artools/public/resave";
             document.form.target="";
             document.form.submit();
         }
@@ -187,25 +187,25 @@
             document.form.marker.value="jeje";
             if (document.form2.sel.value == "11")
             {
-                document.getElementById("image").src = "http://localhost/artools/public/images/markers/11.png";
+                document.getElementById("image").src = "http://froac.manizales.unal.edu.co/artools/public/images/markers/11.png";
                 document.getElementById("download").download="11.png";
                 document.form.marker.value="11";
             }
             if (document.form2.sel.value == "12")
             {
-                document.getElementById("image").src =  "http://localhost/artools/public/images/markers/12.png";
+                document.getElementById("image").src =  "http://froac.manizales.unal.edu.co/artools/public/images/markers/12.png";
                 document.getElementById("download").download="12.png";
                 document.form.marker.value="12";
             }
             if (document.form2.sel.value == "13")
             {
-                document.getElementById("image").src = "http://localhost/artools/public/images/markers/13.png";
+                document.getElementById("image").src = "http://froac.manizales.unal.edu.co/artools/public/images/markers/13.png";
                 document.getElementById("download").download="13.png";
                 document.form.marker.value="13";
             }
             if (document.form2.sel.value == "14")
             {
-                document.getElementById("image").src =  "http://localhost/artools/public/images/markers/14.png";
+                document.getElementById("image").src =  "http://froac.manizales.unal.edu.co/artools/public/images/markers/14.png";
                 document.getElementById("download").download="14.png";
                 document.form.marker.value="14";
             }
