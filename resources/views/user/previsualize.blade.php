@@ -31,6 +31,7 @@
     </style>
 </head>
 <body>
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
 <canvas id="debugCanvas"></canvas>
 <div id="container"></div>
 <script type="text/javascript" src="{{asset('awe/js/awe-v8.js')}}"></script>
@@ -41,6 +42,8 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+</script>
+<script type="text/javascript">
     //   DEBUG = true;
     window.addEventListener('load', function() {
         window.awe.init({
