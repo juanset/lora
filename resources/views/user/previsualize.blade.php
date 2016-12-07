@@ -30,6 +30,7 @@
     </style>
 </head>
 <body>
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
 <canvas id="debugCanvas"></canvas>
 <div id="container"></div>
 <script type="text/javascript" src="{{asset('awe/js/awe-v8.js')}}"></script>
