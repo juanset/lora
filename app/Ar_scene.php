@@ -14,9 +14,9 @@ class Ar_scene extends Model
             ,'background_route'
             ,'theme'
             ,'description'
-            , 'title'
-            , 'background_width'
-            , 'background_high'
+            ,'title'
+            ,'background_width'
+            ,'background_high'
         ];
     //
     public function user()

@@ -48,7 +48,7 @@
                         capabilities: ['gum','webgl'],
                         files: [
                             [ '' +
-                            "{{asset('awe.js-master/js/awe-standard-dependencies.js')}}", '{{asset('awe.js-master/js/awe-standard.js')}}'],
+                            "{{asset('awe.js-master/js/awe-standard-dependencies.js')}}", "{{asset('awe.js-master/js/awe-standard.js')}}"],
                             "{{asset('awe.js-master/examples/marker_ar/awe-jsartoolkit-dependencies.js')}}",
                             "{{asset('awe.js-master/examples/marker_ar/awe.marker_ar.js')}}",
                         ],

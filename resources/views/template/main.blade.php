@@ -11,10 +11,6 @@
 
     <title>@yield('title', 'ARTools')</title>
 
-
-
-
-
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('template/bower_components/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet">
 

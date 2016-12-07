@@ -23,7 +23,8 @@
 
                     <div class="form-group">
                         <label class="sr-only">description</label>
-                        <input id="campo1" name="description" type="text" class="form-control" placeholder="Description" />
+                        <textarea form="form" name="descriptionta" id="descriptionta" rows="10" cols="70" class="form-control" placeholder="Description"></textarea>
+                        <input style="display: none;" id="description" name="description" type="hidden" class="form-control" placeholder="Description" value="" />
                     </div>
 
                     <div class="form-group">
@@ -114,9 +115,9 @@
 
     </form>
 
-    <img src="http://froac.manizales.unal.edu.co/artools/images/markers/11.png" id="image">
+    <img src="{{ asset('images/markers/11.png') }}" id="image">
 
-    <a href="http://froac.manizales.unal.edu.co/artools/images/markers/" download="11.png" id="download">Descargar Marcador</a>
+    <a href="{{ asset('images/markers/11.png') }}" id="download" download>Descargar Marcador</a>
 
 
 @endsection
@@ -138,7 +139,8 @@
                 document.form.title.focus();
                 return 0;
             }
-            if(document.form.description.value.length==0)
+            $('#description').val($('#descriptionta').val());
+            if($('#descriptionta').val().length==0)
             {
                 alert("Debe ingresar a descripción para el objeto de aprendizaje");
                 document.form.title.focus();
@@ -181,7 +183,8 @@
                     document.form.title.focus();
                     return 0;
                 }
-                if(document.form.description.value.length==0)
+                $('#description').val($('#descriptionta').val());
+                if($('#descriptionta').val().length==0)
                 {
                     alert("Debe ingresar a descripción para el objeto de aprendizaje");
                     document.form.title.focus();
@@ -206,7 +209,7 @@
                     return 0;
                 }
 
-            document.form.action="http://froac.manizales.unal.edu.co/artools/public/save";
+            document.form.action="{{ route('save') }}";
             document.form.target="";
             document.form.submit();
         }
@@ -216,26 +219,26 @@
             document.form.marker.value="jeje";
             if (document.form2.sel.value == "11")
             {
-                document.getElementById("image").src = "http://froac.manizales.unal.edu.co/artools/images/markers/11.png";
-                document.getElementById("download").download="11.png";
+                document.getElementById("image").src = "{{ asset('images/markers/11.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/11.png') }}";
                 document.form.marker.value="11";
             }
             if (document.form2.sel.value == "12")
             {
-                document.getElementById("image").src =  "http://froac.manizales.unal.edu.co/artools/images/markers/12.png";
-                document.getElementById("download").download="12.png";
+                document.getElementById("image").src =  "{{ asset('images/markers/12.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/12.png') }}";
                 document.form.marker.value="12";
             }
             if (document.form2.sel.value == "13")
             {
-                document.getElementById("image").src = "http://froac.manizales.unal.edu.co/artools/images/markers/13.png";
-                document.getElementById("download").download="13.png";
+                document.getElementById("image").src = "{{ asset('images/markers/13.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/13.png') }}";
                 document.form.marker.value="13";
             }
             if (document.form2.sel.value == "14")
             {
-                document.getElementById("image").src =  "http://froac.manizales.unal.edu.co/artools/images/markers/14.png";
-                document.getElementById("download").download="14.png";
+                document.getElementById("image").src =  "{{ asset('images/markers/14.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/14.png') }}";
                 document.form.marker.value="14";
             }
         }

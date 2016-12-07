@@ -11,6 +11,7 @@ use Session;
 use Redirect;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use Symfony\Component\DomCrawler\Field\TextareaFormField;
 
 class Ar_ScenesController extends Controller
 {

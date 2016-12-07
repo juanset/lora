@@ -42,9 +42,9 @@
 
     </form>
 
-    <img src="http://froac.manizales.unal.edu.co/artools/images/markers/11.png" id="image">
+    <img src="{{ asset('images/markers/11.png') }}" id="image">
 
-    <a href="http://froac.manizales.unal.edu.co/artools/images/markers" download="11.png" id="download">Descargar Marcador</a>
+    <a href="{{ asset('images/markers/11.png') }}" id="download" download>Descargar Marcador</a>
 
     {!! $scenes->render() !!}
 @endsection
@@ -62,23 +62,23 @@
         {
             if (document.form.sel.value == "11")
             {
-                document.getElementById("image").src = "http://froac.manizales.unal.edu.co/artools/images/markers/11.png";
-                document.getElementById("download").download="11.png";
+                document.getElementById("image").src = "{{ asset('images/markers/11.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/11.png') }}";
             }
             if (document.form.sel.value == "12")
             {
-                document.getElementById("image").src =  "http://froac.manizales.unal.edu.co/artools/images/markers/12.png";
-                document.getElementById("download").download="12.png";
+                document.getElementById("image").src =  "{{ asset('images/markers/12.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/12.png') }}";
             }
             if (document.form.sel.value == "13")
             {
-                document.getElementById("image").src = "http://froac.manizales.unal.edu.co/artools/images/markers/13.png";
-                document.getElementById("download").download="13.png";
+                document.getElementById("image").src = "{{ asset('images/markers/13.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/13.png') }}";
             }
             if (document.form.sel.value == "14")
             {
-                document.getElementById("image").src =  "http://froac.manizales.unal.edu.co/artools/images/markers/14.png";
-                document.getElementById("download").download="14.png";
+                document.getElementById("image").src =  "{{ asset('images/markers/14.png') }}";
+                document.getElementById("download").href="{{ asset('images/markers/14.png') }}";
             }
         }
 

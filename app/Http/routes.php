@@ -134,7 +134,7 @@ Route::post('resave',
         'as' => 'resave'
     ]);
 
-Route::get('save/{var}',
+Route::get('save',
     [
         'uses'=>'Ar_ScenesController@save',
         'as'=>'save'
