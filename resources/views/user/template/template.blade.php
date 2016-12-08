@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- optionally if you need translation for your language then include
         locale file as mentioned below -->
-    <script src={{asset("plugins/forms/js/fileinput_locale_<lang>.js")}}></script>
+    <script src={{asset("plugins/forms/js/fileinput_locale_es.js")}}></script>
 
     <script type="text/javascript">
 
