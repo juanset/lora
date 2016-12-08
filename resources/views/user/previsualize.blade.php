@@ -96,6 +96,29 @@
                              */
                             awe.pois.add({ id:'jsartoolkit_marker_63', position: { x:0, y:0, z:0 }, visible: false });
 
+
+                            awe.projections.add({
+                                id:'background',
+                                geometry: { shape: 'plane', height: parseInt("{{$scene["background_height"]}}"),
+                                    width: parseInt("{{$scene["background_width"]}}") },
+                                rotation: { x:180, y:0, z:0 },
+                                material: { type: 'phong', color: 0xFFFFFF },
+                                texture: { path: "{{asset("realidad/tmp/".$scene["background"])}}" }
+                            }, { poi_id: 'jsartoolkit_marker_'+'63' } );
+
+                            awe.projections.add({
+                                    id: 'object',
+                                    geometry: { path: "{{asset("realidad/tmp/".$scene["object"])}}" },
+                                    scale: { x: parseInt("{{$scene["scale_x"]}}"), y: parseInt("{{$scene["scale_y"]}}"),
+                                        z: parseInt("{{$scene["scale_z"]}}") },
+                                    rotation: { x:0, y:270, z:90 },
+                                    position: { x:parseInt("{{$scene["position_x"]}}"),
+                                        y:parseInt("{{$scene["position_y"]}}"),
+                                        z:parseInt("{{$scene["position_z"]}}") },
+                                    material: { type: 'phong', color: 0xFFFFFF },
+                                    texture: { path: "{{asset("realidad/tmp/".$scene["texture"])}}" }
+                                }, { poi_id: 'jsartoolkit_marker_'+'63' } );
+
                             awe.projections.add({
                                 id:'marker_projection',
                                 geometry: { shape: 'cube', x:50, y:50, z:50 },
