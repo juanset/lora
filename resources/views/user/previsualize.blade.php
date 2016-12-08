@@ -94,39 +94,17 @@
                              NOTE: See 64.png in this directory or https://github.com/kig/JSARToolKit/blob/master/demos/markers
                              This automatically binds your POI to that marker id - easy!
                              */
-                            awe.pois.add({ id:'jsartoolkit_marker_'+'63', position: { x:0, y:0, z:0 }, visible: false });
+                            awe.pois.add({ id:'jsartoolkit_marker_63', position: { x:0, y:0, z:0 }, visible: false });
 
                             awe.projections.add({
-                                id:'background',
-                                geometry: { shape: 'plane', height: parseInt("{{$scene["background_high"]}}"),
-                                    width: parseInt("{{$scene["background_width"]}}") },
-                                rotation: { x:270, y:0, z:0 },
-                                material: { type: 'phong', color: 0xFFFFFF },
-                                texture: { path: "{{asset("realidad/tmp/".$scene["background_route"])}}" },
-                            }, { poi_id: 'jsartoolkit_marker_'+'63' } );
-
-                            awe.projections.add({
-                                    id: 'object',
-                                    geometry: { path: "{{asset("realidad/tmp/".$objects["object_route"])}}" },
-                                    scale: { x: parseInt("{{$objects["scale_x"]}}"), y: parseInt("{{$objects["scale_y"]}}"),
-                                        z: parseInt("{{$objects["scale_z"]}}") },
-                                    rotation: { x:0, y:90, z:0 },
-                                    position: { x:parseInt("{{$objects["position_x"]}}"),
-                                        y:parseInt("{{$objects["position_y"]}}"),
-                                        z:parseInt("{{$objects["position_z"]}}") },
-                                    material: { type: 'phong', color: 0xFFFFFF },
-                                    texture: { path: "{{asset("realidad/tmp/".$objects["texture_route"])}}" },
-                                }, { poi_id: 'jsartoolkit_marker_'+'63' } );
-
-                            /*awe.projections.add({
                                 id:'marker_projection',
                                 geometry: { shape: 'cube', x:50, y:50, z:50 },
                                 position: { x:0, y:0, z:0 },
                                 rotation: { x:0, y:0, z:180 },
                                 material:{ type: 'phong', color: 0xFFFFFF },
-                                texture: { path: '{--{asset('awe/awe_orange_square.png')}--}' },
+                                texture: { path: '{{asset('awe/awe_orange_square.png')}}' },
                                 visible: false,
-                            }, { poi_id: 'jsartoolkit_marker_63' });*/
+                            }, { poi_id: 'jsartoolkit_marker_63' });
 
 
                             /*awe.pois.add({ id:'fixed_poi', position: { x:100, y:0, z:-250 }, visible: false });
