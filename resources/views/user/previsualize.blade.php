@@ -95,10 +95,6 @@
                              This automatically binds your POI to that marker id - easy!
                              */
                             awe.pois.add({ id:'jsartoolkit_marker_63', position: { x:0, y:0, z:0 }, visible: false });
-
-
-                            
-
                             awe.projections.add({
                                 id:'marker_projection',
                                 geometry: { shape: 'cube', x:50, y:50, z:50 },
@@ -108,7 +104,6 @@
                                 texture: { path: '{{asset('awe/awe_orange_square.png')}}' },
                                 visible: false,
                             }, { poi_id: 'jsartoolkit_marker_63' });
-
 
                             /*awe.pois.add({ id:'fixed_poi', position: { x:100, y:0, z:-250 }, visible: false });
                              awe.projections.add({
