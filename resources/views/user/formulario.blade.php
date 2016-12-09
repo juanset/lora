@@ -164,6 +164,9 @@
                 document.form.title.focus();
                 return 0;
             }
+
+            alert(document.form.method);
+
             document.form.submit();
         }
 
@@ -208,6 +211,7 @@
                     document.form.title.focus();
                     return 0;
                 }
+
 
             document.form.action="{{ route('save') }}";
             document.form.target="";
