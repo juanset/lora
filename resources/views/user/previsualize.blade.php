@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>AWE Marker AR demo</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta charset="utf-8"/>
     <style type="text/css">
@@ -31,18 +30,10 @@
     </style>
 </head>
 <body>
-<input type="hidden" name="_token" value="{{ csrf_token() }}">
 <canvas id="debugCanvas"></canvas>
 <div id="container"></div>
 <script type="text/javascript" src="{{asset('awe/js/awe-v8.js')}}"></script>
 <script type="text/javascript" src="{{asset('awe/js/awe-loader.js')}}"></script>
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-</script>
 <script type="text/javascript">
     //   DEBUG = true;
     window.addEventListener('load', function() {
