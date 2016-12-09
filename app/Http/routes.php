@@ -113,6 +113,12 @@ Route::post('upload',
         'as' => 'upload'
     ]);
 
+Route::get('upload',
+    [
+        'uses' => 'Ar_ScenesController@upload',
+        'as' => 'upload'
+    ]);
+
 Route::post('reupload',
     [
         'uses' => 'Ar_ScenesController@reupload',
