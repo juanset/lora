@@ -166,6 +166,7 @@
             }
 
             alert(document.form.method);
+            alert(document.form.action);
 
             document.form.submit();
         }
