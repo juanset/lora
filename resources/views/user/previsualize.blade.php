@@ -75,7 +75,7 @@
                         success: function() {
                             awe.setup_scene();
 
-                            awe.settings.update({data:{value: 'ar'}, where:{id: 'view_mode'}})
+                            awe.settings.update({data:{value: 'ar'}, where:{id: 'view_mode'}});
 
                             /*
                              Binding a POI to a jsartoolkit marker is easy
