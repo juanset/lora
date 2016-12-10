@@ -24,185 +24,36 @@
 </head>
 <body>
 
+<form id="visualizador_artools" action="http://froac.manizales.unal.edu.co/visualizador_artools/examples/marker_ar/index.php"
+      method="post" style="display: none;">
+    <input type="hidden" id="bg_path" name="bg_path" value="{{asset("realidad/tmp/".$scene["background"])}}">
+    <input type="hidden" id="bg_width" name="bg_width" value="{{$scene["background_width"]}}">
+    <input type="hidden" id="bg_height" name="bg_height" value="{{$scene["background_height"]}}">
 
+    <input type="hidden" id="object_path" name="object_path" value="{{asset("realidad/tmp/".$scene["object"])}}">
+    <input type="hidden" id="texture_path" name="texture_path" value="{{asset("realidad/tmp/".$scene["texture"])}}">
 
+    <input type="hidden" id="object_scale_x" name="object_scale_x" value="{{$scene["scale_x"]}}">
+    <input type="hidden" id="object_scale_y" name="object_scale_y" value="{{$scene["scale_y"]}}">
+    <input type="hidden" id="object_scale_z" name="object_scale_z" value="{{$scene["scale_z"]}}">
 
+    <input type="hidden" id="object_position_x" name="object_position_x" value="{{$scene["position_x"]}}">
+    <input type="hidden" id="object_position_y" name="object_position_y" value="{{$scene["position_y"]}}">
+    <input type="hidden" id="object_position_z" name="object_position_z" value="{{$scene["position_z"]}}">
 
-<div id="container" style="z-index: -2">
+    <input type="hidden" id="marker" name="marker" value="{{$marker}}">
+
+</form>
 
 </div>
 
-<script type="text/javascript" src="{{asset('awe.js-master/js/awe-loader-min.js')}}"></script>
-<script type="text/javascript">
-    window.addEventListener('load', function()
-    {
-
-
-        window.awe.init({
-            device_type: awe.AUTO_DETECT_DEVICE_TYPE,
-            settings: {
-                container_id: 'container',
-                default_camera_position: { x:0, y:0, z:0 },
-                default_lights:[
-                    {
-                        id: 'point_light',
-                        type: 'point',
-                        color: 0xFFFFFF,
-                    },
-                ],
-            },
-            ready: function() {
-                awe.util.require([
-                    {
-                        capabilities: ['gum','webgl'],
-                        files: [
-                            [ '' +
-                            "{{asset('awe.js-master/js/awe-standard-dependencies.js')}}", "{{asset('awe.js-master/js/awe-standard.js')}}"],
-                            "{{asset('awe.js-master/examples/marker_ar/awe-jsartoolkit-dependencies.js')}}",
-                            "{{asset('awe.js-master/examples/marker_ar/awe.marker_ar.js')}}",
-                        ],
-                        success: function() {
-
-
-                            awe.setup_scene();
-                            awe.pois.add(
-                                    {
-                                        id:'poi_1',
-                                        position: { x:0, y:0, z:10000 },
-                                        visible: false
-                                    });
-
-                            awe.projections.add(
-                                    {
-                                        id:'projection_1',
-                                        geometry:
-                                        {
-                                            shape: 'plane',
-                                            height: parseInt("{{$scene["background_height"]}}"),
-                                            width: parseInt("{{$scene["background_width"]}}")
-                                        },
-
-                                        rotation:
-                                        {
-                                            x:270,
-                                            y:0,
-                                            z:0
-                                        },
-
-                                        material:
-                                        {
-                                            type: 'phong',
-                                            color: 0xFFFFFF
-                                        },
-
-                                        texture:
-                                        {
-
-                                            path: "{{asset("realidad/tmp/".$scene["background"])}}"
-                                        },
-                                    },
-                                    { poi_id: 'poi_1' });
-
-                            awe.projections.add(
-                                    {
-                                        id: 'projection_2',
-                                        geometry:
-                                        {
-                                            path: "{{asset("realidad/tmp/".$scene["object"])}}"
-
-                                        },
-
-                                        scale:
-                                        {
-                                            x: parseInt("{{$scene["scale_x"]}}"),
-                                            y: parseInt("{{$scene["scale_y"]}}"),
-                                            z: parseInt("{{$scene["scale_z"]}}")
-                                        },
-
-                                        rotation:
-                                        {
-                                            x:0,
-                                            y:90,
-                                            z:0
-                                        },
-
-                                        position:
-                                        {
-                                            x:parseInt("{{$scene["position_x"]}}"),
-                                            y:parseInt("{{$scene["position_y"]}}"),
-                                            z:parseInt("{{$scene["position_z"]}}")
-                                        },
-
-
-                                        material:
-                                        {
-                                            type: 'phong',
-                                            color: 0xFFFFFF
-                                        },
-                                        texture:
-                                        {
-                                            //path: lista[0].value
-                                            path: "{{asset("realidad/tmp/".$scene["texture"])}}"
-                                        },
-                                    },
-                                    {poi_id: 'poi_1'});
-
-                            awe.events.add([{
-                                id: 'ar_tracking_marker',
-                                device_types: {
-                                    pc: 1,
-                                    android: 1
-                                },
-                                register: function(handler) {
-                                    window.addEventListener('ar_tracking_marker', handler, false);
-                                },
-                                unregister: function(handler) {
-                                    window.removeEventListener('ar_tracking_marker', handler, false);
-                                },
-                                handler: function(event) {
-                                    if (event.detail) {
-                                        if (event.detail['{{$marker}}']) { // we are mapping marker #64 to this projection
-                                            awe.pois.update({
-                                                data: {
-                                                    visible: true,
-                                                    position: { x:0, y:0, z:0 },
-                                                    matrix: event.detail['{{$marker}}'].transform
-                                                },
-                                                where: {
-                                                    id: 'poi_1'
-                                                }
-                                            });
-
-                                            document.getElementById("awe_canvas-0").style.visibility="visible";
-                                        }
-                                        else {
-                                            awe.pois.update({
-                                                data: {
-                                                    visible: false
-                                                },
-                                                where: {
-                                                    id: 'poi_1'
-                                                }
-                                            });
-                                            document.getElementById("awe_canvas-0").style.visibility="hidden";
-                                        }
-                                        awe.scene_needs_rendering = 1;
-                                    }
-                                }
-                            }])
-                        },
-                    },
-                    {
-                        capabilities: [],
-                        success: function() {
-                            document.body.innerHTML = '<p>Try this demo in the latest version of Chrome or Firefox on a PC or Android device</p>';
-                        },
-                    },
-                ]);
-            }
-        });
+<script>
+    $.ready(function () {
+        $('#visualizador_artools').submit();
     });
+
 </script>
+
 </body>
 </html>
 
